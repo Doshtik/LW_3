@@ -41,6 +41,11 @@ namespace LW_3
         {
             if (_db != null)
             {
+                var currentRow = dataGridViewUsers.CurrentRow;
+
+                if (currentRow == null) 
+                    return;
+
                 var user = (User)dataGridViewUsers.CurrentRow.DataBoundItem;
 
                 if (user != null)
