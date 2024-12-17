@@ -13,7 +13,7 @@ public partial class Post
 
     public string Content { get; set; } = null!;
 
-    public DateTime DateOfPublication { get; set; }
+    public DateOnly DateOfPublication { get; set; }
 
     public virtual User IdOfUserNavigation { get; set; } = null!;
 }

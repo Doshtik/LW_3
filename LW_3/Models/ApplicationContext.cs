@@ -7,14 +7,16 @@ namespace LW_3.Models;
 public partial class ApplicationContext : DbContext
 {
     public ApplicationContext() { }
+
     public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
 
     public virtual DbSet<Post> Posts { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
-    { 
-        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=blog;Username=postgres;Password=1111"); 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=blog;Username=postgres;Password=1111");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
